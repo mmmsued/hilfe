@@ -7,3 +7,5 @@ Der Hilfetext kann leicht in der init.lua-Datei den eigenen Bedürfnissen angepa
 
 This mod helps new users understand Minetest (at the moment only german language). You can change easily the help text in the init.lua file.
 ## [download](https://github.com/mmmsued/hilfe)
+
+<img src="Screenshot.png">
