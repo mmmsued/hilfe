@@ -16,7 +16,7 @@ Wie kann ich meine Heimatposition setzen oder einen Skin ändern? Finde es herau
 
 Ich weiß nicht mehr, welche die SHIFT-Taste ist. Dann schaue Dir die Abbildung unter »Screen« an.
 
-SCROLLEN: Einige Texte der Hilfe sind etwas länger geraten. Hier scrollst Du am besten mit dem Mausrad, um den gesamten Inhalt zu sehen. Beachte, das einige Erklärungen nur für unsere spezielle Serverkonfiguration und die eingesetzten Mods gelten.
+SCROLLEN: Einige Texte der Hilfe sind etwas länger geraten. Hier scrollst Du am besten mit dem Mausrad, um den gesamten Inhalt zu sehen. Beachte, dass einige Erklärungen nur für unsere spezielle Serverkonfiguration und die eingesetzten Mods gelten.
 
 AUFRUFEN UND BEENDEN: Du kannst diese Hilfe jederzeit über das Inventar (I) aufrufen oder Du gibst im Chat (T) den Befehl /hilfe ein. Mit der ESC-Taste schließt Du die Hilfe.]]
 
@@ -298,7 +298,7 @@ Gelegentlich kommt es vor, dass ein:e Spieler:in trotz Baurechten ein Objekt nic
 
 GEBIETSSCHUTZ: ECKPUNKTE SETZEN
 	/area_pos set  – mit Linksklick zwei Eckpunkte setzen
-
+oder /area_pos1 bzw. /area_pos2 - Eckpunkte definieren
 Ist der Mod »WorldEdit« installiert, kann man die Eckpunkte auch mit dem »Worldedit Wand Tool« setzen. Geben Sie im Inventar (I) als Suchbegriff »wand« ein (ohne Anführungszeichen). Beim setzen von Eckpunkten sollte man daran denken, den zweiten Punkt in die Höhe zu setzen, sonst schützt man am Ende nur eine flache Ebene.
 
 GEBIETSSCHUTZ AKTIVIEREN:
@@ -315,7 +315,7 @@ GEBIETSSCHUTZ: BESITZER:INNEN HINZUFÜGEN:
 Ergebnis: Eine ID als Zahl, zum Beispiel 2 – 2 ist damit Untergebiet von 1 und kann von hinzugefügten Spieler:innen bebaut werden.
 
 GEBIETSSCHUTZ AUFHEBEN:
-	/remove_area 2
+	/remove_area <ID>
 
 Ergebnis: LernoaseErsterStock ist nicht mehr im (alleinigen) Besitz von Norbert, Gebiet 1 gibt es aber immer noch.
 
