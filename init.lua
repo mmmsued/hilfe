@@ -298,7 +298,7 @@ Gelegentlich kommt es vor, dass ein:e Spieler:in trotz Baurechten ein Objekt nic
 
 GEBIETSSCHUTZ: ECKPUNKTE SETZEN
 	/area_pos set  – mit Linksklick zwei Eckpunkte setzen
-  Alternativ: Eckpunkte mit /area_pos1 und /area_pos2 setzen
+	Alternativ: Eckpunkte mit /area_pos1 und /area_pos2 setzen
 
 Ist der Mod »WorldEdit« installiert, kann man die Eckpunkte auch mit dem »Worldedit Wand Tool« setzen. Geben Sie im Inventar (I) als Suchbegriff »wand« ein (ohne Anführungszeichen). Beim setzen von Eckpunkten sollte man daran denken, den zweiten Punkt in die Höhe zu setzen, sonst schützt man am Ende nur eine flache Ebene.
 
@@ -311,13 +311,13 @@ Der GebietsName ist optional, wichtig ist die entstehende Gebiets-ID (eine Zahl)
 GEBIETSSCHUTZ: BESITZER:INNEN HINZUFÜGEN:
 	/add_owner <ParentID> <Spieler:inname> <UnterGebietsName>
 	Beispiel: /add_owner 1 Norbert LernoaseErsterStock
-  Die Zahl 1 ist die Gebiets-ID, die mit /protect erzeugt wurde, der UnterGebietsName ist optional.
+	Die Zahl 1 ist die Gebiets-ID, die mit /protect erzeugt wurde, der UnterGebietsName ist optional.
 
 Ergebnis: Eine ID als Zahl, zum Beispiel 2 – 2 ist damit Untergebiet von 1 und kann von hinzugefügten Spieler:innen bebaut werden.
 
 GEBIETSSCHUTZ AUFHEBEN:
 	/remove_area <ID>
-  Beispiel: /remove_area 2
+	Beispiel: /remove_area 2
 
 Ergebnis: LernoaseErsterStock ist nicht mehr im (alleinigen) Besitz von Norbert, Gebiet 1 gibt es aber immer noch.
 
