@@ -24,7 +24,7 @@ AUFRUFEN UND BEENDEN: Du kannst diese Hilfe jederzeit über das Inventar (I) auf
 local textregeln = [[Serverregeln:
 
 Wir spielen in einer gemeinsamen Welt. Wie im richtigen Leben klappt das nur, wenn sich alle an bestimmte Regeln halten:
-​
+
 Seid nett zu Euren Mitspieler:innen. Beschimpft und beleidigt niemanden.
 Ihr dürft keine Mitspieler:innen »schlagen« (PvP), keine Schwerter o.ä verwenden.
 Helft Euren Mitspieler:innen, falls sie nicht weiterwissen.
