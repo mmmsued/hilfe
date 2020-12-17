@@ -1,5 +1,5 @@
 # Hilfe Mod
-![Hilfe Mod](https://github.com/mmmsued/hilfe)
+[Hilfe Mod](https://github.com/mmmsued/hilfe)
 
 Im Mod »hilfe« findet man die wichtigsten Tastaturbefehle, Blöcke und Funktionen von Minetest erklärt. Aufruf im Chat mit /hilfe oder über das Inventar (Fragezeichen-Icon).
 
