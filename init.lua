@@ -75,11 +75,15 @@ MAUSTASTE & FAHRZEUGE: In Fahrzeuge steigt man (meistens) mit rechter Maustaste 
 Q:  Gegenstand abwerfen, den man aktuell in der Hand hält
 C:  Kameraansicht ändern (mehrfach drücken für verschiedene Modi/zum Beenden) - früher F7
 V:  Mini-Map aktivieren (mehrfach drücken für verschiedene Modi/zum Beenden) - früher F9
-M: Spielsound stumm schalten
+M:  Spielsound stumm schalten
 
+P: Nick-Bewegungsmodus - man fliegt (nur noch) in Richtung des weißen Mauskreuzes.
+R: Weitsicht de/aktivieren. ACHTUNG: FÜHRT ZU HOHER SERVERAUSLASTUNG UND LAGS.
+
+F3:   Nebel ein/ausschalten
 F5:   Funktionstaste, um die Fehlersuchanzeige zu öffnen (probier's mal aus ...)
 F10:  Funktionstaste, um die Konsole zu öffnen (mehr dazu siehe oben im »Chat«)
-F12:  Funktionstaste, um Screenshots zu machen (Bilder findet man lokal im bin-Ordner von Minetest)
+F12:  Funktionstaste, um Screenshots zu machen (es wird ein Ordner »screenshots« im Minetest-Ordner angelegt)
 
 ]]
 
@@ -310,7 +314,9 @@ GEBIETSSCHUTZ AKTIVIEREN:
 Der GebietsName ist optional, wichtig ist die entstehende Gebiets-ID (eine Zahl). Da in der Regel aber nur Administrator:innen das Recht haben, Gebiete zu schützen, müssen im nächsten Schritt Spieler:innen dem Area hinzugefügt werden (außer, man hat gleich mit /set_owner gearbeitet).
 
 GEBIETSSCHUTZ: BESITZER:INNEN HINZUFÜGEN:
-	/add_owner <ParentID> <Spieler:inname> <UnterGebietsName>
+Zunächst muss ein bereits geschütztes Gebiet gänzlich (/select_area <ID>) oder in Teilen markiert werden (wie oben: /area_pos set). Danach kommt der Befehl /add_owner zum Einsatz.
+
+  /add_owner <ParentID> <Spieler:inname> <UnterGebietsName>
 	Beispiel: /add_owner 1 Norbert LernoaseErsterStock
 	Die Zahl 1 ist die Gebiets-ID, die mit /protect erzeugt wurde, der UnterGebietsName ist optional.
 
@@ -322,8 +328,9 @@ GEBIETSSCHUTZ AUFHEBEN:
 
 Ergebnis: LernoaseErsterStock ist nicht mehr im (alleinigen) Besitz von Norbert, Gebiet 1 gibt es aber immer noch.
 
-GEBIETSSCHUTZ: GEBIETE VERWALTEN:
+GEBIETSSCHUTZ: GEBIETE VERWALTEN
   /list_areas - /area_info - /change_owner <ID> <Spieler:inname>
+Alle area-Befehle unter: https://github.com/minetest-mods/areas
 
 
 WORLDEDIT:
