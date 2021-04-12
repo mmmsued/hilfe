@@ -1,1 +1,1 @@
-Im Mod "hilfe" findet man die wichtigsten Tastaturbefehle, Bloecke und Funktionen von Minetest erklaert. Aufruf im Chat mit /hilfe oder ueber das Inventar (Fragezeichen-Icon).
+Im Mod "hilfe" findet man die wichtigsten Tastaturbefehle, Blöcke und Funktionen von Minetest erklärt. Aufruf im Chat mit /hilfe oder über das Inventar (Fragezeichen-Icon).
