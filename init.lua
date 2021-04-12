@@ -1,4 +1,7 @@
--- Copyright (C) 2020 Norbert Thien, multimediamobil - Region Süd, Lizenz: Creative Commons BY-SA 4.0
+-- Copyright (C) 2021 Norbert Thien, multimediamobil - Region Süd, Lizenz: Creative Commons BY-SA 4.0
+-- Aufruf im Chat mit /hilfe oder über das Inventar (Fragezeichen-Icon).
+
+local S = minetest.get_translator("hilfe")
 
 local textallgemein = [[Nutze unsere eigens programmierte Hilfe:
 
@@ -10,11 +13,11 @@ Wie kann man noch einmal private Nachrichten an andere schicken? »Chat« verrä
 
 Jetzt habe ich schon wieder vergessen, wie dieser eine Block auf englisch heißt. Macht nichts. Dafür gibt es den Eintrag »Blöcke«.
 
-Da gab es doch dieses Werkzeug, mit dem man ... konnte. Seinen Namen erfährst Du unter »Tools«.
+Da gab es doch ein Werkzeug, mit dem man ... konnte. Seinen Namen erfährst Du unter »Werkzeuge«.
 
 Wie kann ich meine Heimatposition setzen oder einen Skin ändern? Finde es heraus mit »Inventar«.
 
-Ich weiß nicht mehr, welche die SHIFT-Taste ist. Dann schaue Dir die Abbildung unter »Screen« an.
+Ich weiß nicht mehr, welche die SHIFT-Taste ist. Dann schaue Dir die Abbildung unter »Belegung« an.
 
 SCROLLEN: Einige Texte der Hilfe sind etwas länger geraten. Hier scrollst Du am besten mit dem Mausrad, um den gesamten Inhalt zu sehen. Beachte, dass einige Erklärungen nur für unsere spezielle Serverkonfiguration und die eingesetzten Mods gelten.
 
@@ -26,26 +29,27 @@ local textregeln = [[Serverregeln:
 Wir spielen in einer gemeinsamen Welt. Wie im richtigen Leben klappt das nur, wenn sich alle an bestimmte Regeln halten:
 
 Seid nett zu Euren Mitspieler:innen. Beschimpft und beleidigt niemanden.
-Ihr dürft keine Mitspieler:innen »schlagen« (PvP), keine Schwerter o.ä verwenden.
-Helft Euren Mitspieler:innen, falls sie nicht weiterwissen.
+Ihr dürft keine Mitspieler:innen »schlagen« (PvP), keine Schwerter o.ä. verwenden.
+Helft Euren Mitspieler:innen. Nur gemeinsam erreichen wir unser Ziel.
 
 Zerstört nichts, was Ihr nicht selber gebaut habt.
 Baut nichts auf oder in der Nähe von fremden Grundstücken (außer, Ihr wurdet eingeladen).
 Geht nicht in fremde Häuser (außer Ihr habt gefragt oder wurdet eingeladen).
 
-Verwendt kein Lava, ohne vorher einen Graben angelegt zu haben (sonst brennt die ganze Welt nieder).
+Verwendet keine Lava, ohne vorher einen Graben angelegt zu haben (sonst brennt die ganze Welt nieder).
 Verwendet kein Wasser, ohne einen Graben angelegt zu haben (sonst wird die ganze Welt überflutet).
 Verwendet kein Feuer, sonst brennt Ihr alles nieder.
-Ihr dürft keine »mobs« (Tiere, Monster o.ä.) oder eggs (Eier) und ähnliches verwenden.
-Ihr darfst nur Materialien verwenden und Gebäude entwerfen, die zu unserer Themenwelt passen.
+Ihr dürft keine »mobs« (Tiere, Monster o.ä.) oder »eggs« (Eier) und ähnliches verwenden (spawnen).
+Ihr dürft nur Materialien verwenden und Gebäude entwerfen, die zu unserer Themenwelt passen.
 
-Ihr müsst Euch an die Regeln halten, sonst werdet Ihr vom Server verbannt.
+Bevor Ihr nach Blöcken, Befehlen und Werkzeugen fragt: Schaut bitte immer erst in diese Hilfe.
 
-]]
+Ihr müsst Euch an die Regeln halten, sonst werdet Ihr vom Server verbannt.]]
+
 
 local texttastatur = [[Die wichtigsten Tastatur-Befehle:
 
-Für die bessere Lesbarkeit sind die Tastatur-Buchstaben groß geschrieben, gemeint sind aber in der Regel die Kleinbuchstaben. Wenn Du nicht weist, wo sich zum Beispiel die ESC-Taste befindet, wechsle oben in den »Screen«.
+Für die bessere Lesbarkeit sind die Tastatur-Buchstaben groß geschrieben, gemeint sind aber in der Regel die Kleinbuchstaben. Wenn Du nicht weist, wo sich zum Beispiel die ESC-Taste befindet, wechsle zum Tab »Belegung«.
 
 W | A | S | D:  Bewegungsrichtung (vorwärts | nach links | rückwärts | nach rechts)
 LEERTASTE (SPACE):  springen, Leiter klettern - fliegen (Flugrecht nötig)
@@ -65,12 +69,12 @@ B:  Vorheriges Element aus der unteren Inventarleiste (hotbar) auswählen
 ZAHLEN:  Mit den Zahlen 1 bis 8 Gegenstände aus der unteren Inventarleiste (hotbar) auswählen
 
 MAUSRAD:  Gegenstände aus der unteren Inventarleiste (hotbar) auswählen
-MAUSTASTE (links):  Gegenstände abbauen - bei hartem Material oft schlagen oder Werkzeug wechseln
+MAUSTASTE (links):  Gegenstände abbauen - je nach Material oft schlagen oder Werkzeug wechseln
 MAUSTASTE (links) + SHIFT: besondere Objekte abbauen (zum Beispiel cart)
 MAUSTASTE (rechts):  mit Blöcken bauen, Bücher, Türen, Schilder öffnen, Schalter umlegen etc.
 MAUSTASTE (rechts) + SHIFT: oberhalb besonderer Objekte bauen (zum Beispiel command block)
 
-MAUSTASTE & FAHRZEUGE: In Fahrzeuge steigt man (meistens) mit rechter Maustaste ein. Die Tasten WASD bewegen das Fahrzeug (Ausnahme: cart - hier schlägt man mit links auf den Rand der Lore). Aussteigen wieder mit rechter Maustaste. Manchmal muss man sich dann beim Ausstieg einfach mit den WASD-Taste bewegen, um wirklich das Fahrzeug zu verlassen.
+MAUSTASTE & FAHRZEUGE: In Fahrzeuge steigt man (meistens) mit rechter Maustaste ein. Die Tasten WASD bewegen das Fahrzeug (Ausnahme: cart - hier schlägt man mit links auf den Rand der Lore). Will man wieder aussteigen, schlägt man (meistens) mit rechter Maustaste auf den Boden des Fahrzeugs. Danach einfach mit den WASD-Taste bewegen.
 
 Q:  Gegenstand abwerfen, den man aktuell in der Hand hält
 C:  Kameraansicht ändern (mehrfach drücken für verschiedene Modi/zum Beenden) - früher F7
@@ -82,43 +86,51 @@ R: Weitsicht de/aktivieren. ACHTUNG: FÜHRT ZU HOHER SERVERAUSLASTUNG UND LAGS.
 
 F3:   Nebel ein/ausschalten
 F5:   Funktionstaste, um die Fehlersuchanzeige zu öffnen (probier's mal aus ...)
-F10:  Funktionstaste, um die Konsole zu öffnen (mehr dazu siehe oben im »Chat«)
-F12:  Funktionstaste, um Screenshots zu machen (es wird ein Ordner »screenshots« im Minetest-Ordner angelegt)
+F10:  Funktionstaste, um die Konsole zu öffnen (mehr dazu siehe oben im Tab »Chat«)
+F12:  Funktionstaste für Screenshots (es wird ein Ordner »screenshots« im Minetest-Ordner angelegt)]]
 
-]]
 
 local textchat = [[Die wichtigsten Chat-Befehle:
 
 CHAT ÖFFNEN UND EINE NACHRICHT SCHREIBEN:
 Den Chat öffnet man mit dem Buchstaben T auf der Tastatur, schließen lässt er sich wieder mit der ESC-Taste. Wenn Du etwas in den geöffneten Chat schreibst und am Ende die ZEILENSCHALT-Taste (ENTER oder RETURN) drückst, schickst Du eine Nachricht an alle Deine Mitspieler:innen.
 
+
 PRIVATE NACHRICHT SCHREIBEN:
 Möchtest Du gezielt nur an eine bestimmte Person schreiben, musst Du Deiner Nachricht den Befehl /msg voranstellen (siehe auch weiter unten »Chatbefehle: Slash-Zeichen«). Füge dann ein Leerzeichen ein und schreibe den Spieler:innennamen (achte dabei auf Groß- und Kleinschreibung). Füge noch ein weiteres Leerzeichen ein und schließlich die eigentliche Nachricht. Drücke am Ende die ZEILENSCHALT-Taste (ENTER oder RETURN).
     > Beispiel: /msg Norbert Ich schicke Dir gerade eine private Nachricht
 
+
 TABULATOR-TASTE (TAB):
 Wenn Du den Namen von Mitspieler:innen in Deinen Nachrichten verwenden möchtest, reicht es oft, die ersten zwei oder drei Buchstaben des Namens einzugeben und dann die TAB-Taste zu drücken. Minetest ergänzt die fehlenden Buchstaben. Das klappt allerdings nur, wenn ein:e gesuchte:r Mitspieler:in online ist. Probleme gibt es auch, wenn viele Mitspieler:in die gleichen Anfangsbuchstaben haben. Außerdem wird zwischen Groß- und Kleinschreibung unterschieden. Die Suche nach he ergibt ein anderes oder gar kein Ergebnis als die Suche nach He (nicht wahr, Heiko ...).
+
 
 PFEILTASTE NACH OBEN UND UNTEN:
 Mit den Pfeiltasten nach oben und unten kannst Du durch alle Befehle oder Nachrichten blättern, die Du schon einmal geschrieben hast, und mit der ZEILENSCHALT-Taste (RETURN) ein zweites Mal abschicken.
 
+
 CHATBEFEHLE: Slash-Zeichen
-Chatbefehle fangen (fast) immer mit einem SCHRÄGSTRICH (slash) an. Auf der Tastatur musst Du dafür die UMSCHALTTASTE (shift) gedrückt halten und gleichzeitig die Zahl 7 eingeben. Danach kommt dann der eigentliche Chat-Befehl. Allerdings funktionieren viele Befehle (wie /grantme all) in der Regel nicht auf einem Server bzw. werden blockiert, um einem Missbrauch vorzubeugen. Sei also nicht allzu enttäuscht, wenn Du nicht die Herrschaft über unseren Server übernehmen kannst ...
+Chatbefehle fangen (fast) immer mit einem SCHRÄGSTRICH (slash) an. Auf der Tastatur musst Du dafür die UMSCHALTTASTE (shift) gedrückt halten und gleichzeitig die Zahl 7 eingeben. Danach kommt dann der eigentliche Chat-Befehl. Allerdings funktionieren viele Befehle (wie /grantme all) in der Regel nicht auf einem Server bzw. werden für normale Spieler:innen blockiert, um einem Missbrauch vorzubeugen. Sei also nicht allzu enttäuscht, wenn's bei Dir nicht klappt und Du nicht die Herrschaft über unseren Server übernehmen kannst ...
+
 
 EIN PAAR CHAT-BEFEHLE (alphabetisch):
 /help all: die eingebaute Minetest-Hilfe öffnen
 /hilfe: diese Hilfe öffnen
 /me: hilreich beim Chatten - me wird durch den eigenen Spieler:innennamen ersetzt
 /mods: welche Mods werden im Spiel verwendet
+/tpr <playername>: Anfrage an <playername>, ob man zu ihm teleportieren darf
+                   <playername> muss mit /tpy oder /tpn annehmen/ablehnen
+/tphr <playername> Anfrage an <playername>, ob man ihn zu sich teleportieren darf
+                   <playername> muss mit /tpy oder /tpn annehmen/ablehnen
 /status: zeigt Serverinformationen, u.a. alle angemeldeten Spieler:innen
 /time: wie spät ist es in der Spielewelt
 
+
 HINWEIS:
-Die Funktionstaste F10 öffnet die sogenannte Konsole. Sie funktioniert ganz ähnlich wie der Chat, zeigt aber mehr ältere Nachrichten und Befehle an.
+Die Funktionstaste F10 öffnet die sogenannte Konsole. Sie funktioniert ganz ähnlich wie der Chat, zeigt aber mehr ältere Nachrichten und Befehle an.]]
 
-]]
 
-local textbloecke = [[Die wichtigsten Blöcke und andere Objekte - alphabetisch):
+local textbloecke = [[Die wichtigsten Blöcke und andere Objekte (alphabetisch):
 
 Diese Aufzählung berücksichtigt im Wesentlichen die Standardblöcke (und ein paar Objekte der von uns hinzugefügten Mods). In den meisten Fällen kannst Du mit deutschen Begriffen suchen. Manchmal macht es aber Sinn, die englischen Vokabeln zu verwenden. Findest Du nichts oder nichts brauchbares, bemühen wir uns, einen passenden Mod nachzuinstallieren (aber das klappt natürlich leider nicht immer ...).
 
@@ -131,18 +143,18 @@ BETT: bed - mit Rechtsklick hinlegen, WASD aufstehen oder Button
 BLUME: flower
 BOOT: boat  - Ein- und Aussteigen mit Rechtsklick
 BUCH: book - Rechtsklick zum Lesen und Schreiben, ESC schließen
-BUCHSTABE: scrabble (eigentlich: letter)
+BUCHSTABE: letter (oder einfach nur: Zeichen)
 
 (E)
 EIMER: bucket - Wasser entfernen: Stein auf den Quellort werfen
-ERDE: dirt
+ERDE: dirt (auch: dirt_with_grass oder dirt_with_snow etc.)
 
 (F)
 FACKEL: torch
 FAHRRAD: bike (falls entsprechender Mod installiert ist)
 FENSTER: glass (oder window)
 FEUER(werk): fire - Feuer löschen: Stein auf den Quellort werfen
-FORMEN SCHNEIDEN: mesh | shape | saw - Bedienung siehe Tab »Tools«
+FORMEN SCHNEIDEN: mesh | shape | saw - Bedienung siehe Tab »Werkzeuge«
 
 (G)
 GEISTERSTEIN: ghoststone (mit mese steuerbar)
@@ -157,7 +169,7 @@ KNOCHEN(mehl): bone - funktioniert nur bei einigen Pflanzen
 KOHLE: coal
 KOLBEN: piston (mit mese steuerbar)
 KORALLE: coral
-KREISSÄGE: saw (Kurzform) -  Bedienung siehe Tab »Tools«
+KREISSÄGE: saw (Kurzform) -  Bedienung siehe Tab »Werkzeuge«
 KREUZ: cross
 KUCHEN: cake (falls entsprechender Mod installiert ist)
 
@@ -186,7 +198,7 @@ SCHAUFEL: shovel
 SCHIENE: rail
 SCHILD: sign - Rechtsklick zum Lesen und Schreiben, ESC schließen
 SCHNEE: snow
-SCHRAUBENDREHER: screw (Kurzform) - Bedienung siehe Tab »Tools«
+SCHRAUBENDREHER: screw (Kurzform) - Bedienung siehe Tab »Werkzeuge«
 SCHWERT: sword
 SPITZHACKE: pick
 STAHL: steel
@@ -206,34 +218,38 @@ WOLLE: wool
 
 (Z)
 ZAUN: fence
-ZUG(schiene): cart - Ein- und Aussteigen siehe Tab »Tastatur«
+ZUG(schiene): cart - Ein- und Aussteigen siehe Tab »Tastatur«]]
 
-]]
 
-local texttools = [[Die wichtigsten Werkzeuge (Tools):
+local textwerkzeuge = [[Die wichtigsten Werkzeuge (Tools):
 
-Übersicht: saw | mesh | shaper | screw
+Übersicht: saw | mesh | shaper | screw | WorldEdit
 
 KREISSÄGE: circular_saw
 Öffne das Inventar und gib als Kurzform saw in das Suchfeld ein. Lege die Säge mit Rechtsklick ab. Jetzt schlage nochmals mit rechts auf die Kreissäge. Es öffnet sich ein kleines Fenster. Nimm Material aus dem unteren Inventar und packe es in das Feld (Slot) AUSGANGSMATERIAL. Jetzt werden Dir rechts davon alle Formen angezeigt, die die Kreissäge aus dem Material schneiden kann. Entnimm die gewünschte Form aus den Slots und packe sie in das untere Inventar. Schließe die Kreissäge mit der ESC-Taste. Fast alle Standardblöcke und viele weitere Objekte lassen sich auf diese Weise mit der Kreissäge bearbeiten.
 
 Hinweis: Die Kreissäge ist personalisiert (owned by). Das heißt, nur die Person, die sie abgelegt hat, kann sie auch wieder entfernen (Ausnahmen: Admin und Spieler:innen mit besonderen Rechten). Außerdem lässt sich die Kreissäge nur entfernen, wenn man vorher die Felder AUSGANGSMATERIAL, REST und WIEDERVERWERTEN geleert hat.
 
+
 MESH MACHINE: mesh machine
 Öffne das Inventar und gib als Kurzform mesh in das Suchfeld ein. Ansonsten funktioniert die Mesh Machine ähnlich wie die Kreissäge. Lege Material in den Slot INPUT, drücke auf eine der grünen Abbildungen und hole das fertige Ergebnis aus dem Slot OUTPUT. Fast alle Standardblöcke und viele weitere Objekte lassen sich mit der Mesh Machine bearbeiten.
+
 
 SHAPER MACHINE: shaper
 Öffne das Inventar und gib shaper in das Suchfeld ein. Ansonsten funktioniert die Shaper Machine ähnlich wie die Kreissäge. Allerdings ist die Auswahl an schneidbaren Blöcken sehr eingeschränkt.
 
-SCHRAUBENDREHER: screwdriver
-Öffne das Inventar und gib als Kurzform screw in das Suchfeld ein. Schlage mit linker und rechter Maustaste auf ein Objekt, um es zu drehen. Fast alle Standardblöcke und viele weitere Objekte lassen sich so neu ausrichten. Denke daran, den Schraubendreher wieder abzuwählen, sonst drehst Du ungewollt weitere Blöcke.
 
-]]
+SCHRAUBENDREHER: screwdriver
+Öffne das Inventar und gib als Kurzform screw in das Suchfeld ein. Schlage mit linker und rechter Maustaste auf ein Objekt, um es zu drehen. Fast alle Standardblöcke und viele weitere Objekte lassen sich so neu ausrichten. Denke daran, den Schraubendreher wieder abzuwählen, sonst drehst Du ungewollt immer weiter Blöcke.
+
+
+WORLDEDIT:
+Besitzt man das WorldEdit-Recht, kann man umfangreiche Bauarbeiten beschleunigen. Das Tool ruft man über den Chat (T) oder übers Inventar (I) auf (Weltkugel). Eine Auflistung aller Möglichkeiten findet man hier: https://wiki.minetest.net/Minetest_in_der_Schule/Anleitung_WorldEdit.]]
+
 
 local textinventar1 = [[Übersicht über das Inventar:
 
-Du öffnest das Inventar mit dem Buchstaben I auf Deiner Tastatur. Schließen kannst Du es wieder mit der ESC-Taste.
-]]
+Du öffnest das Inventar mit dem Buchstaben I auf Deiner Tastatur. Schließen kannst Du es wieder mit der ESC-Taste.]]
 
 local textinventar2 = [[(1) FERTIGUNGSRASTER: Normalansicht des Inventars
 (2) HEIMATPOSITION SETZEN: schnell aktivieren, sobald man einen Bauplatz gefunden hat
@@ -246,23 +262,26 @@ local textinventar2 = [[(1) FERTIGUNGSRASTER: Normalansicht des Inventars
 
 (9) ITEMS SUCHEN: Suchbegriff ins Suchfeld eintragen (manchmal sind die englischen Bezeichnungen nötig) und die RETURN-Taste drücken. Der Pinsel löscht die aktuelle Suchanfrage und zeigt das gesamte Inventar wieder an. Mit den Pfeilen unter dem Suchfeld blättert man seitenweise durch das Inventar.]]
 
-local textscreen1 = [[Übersicht Tastaturlayout:
-]]
 
-local textscreen2 = [[(1) ESC: ESCAPE-Taste - (2) TAB: TABULATOR-Taste - (3) SHIFT: UMSCHALTTASTE
+local textbelegung1 = [[Übersicht Tastaturbelegung:]]
+
+local textbelegung2 = [[(1) ESC: ESCAPE-Taste - (2) TAB: TABULATOR-Taste - (3) SHIFT: UMSCHALTTASTE
 (4) FUNKTIONSTASTEN: F1 bis F12 - (5) ENTER oder RETURN: ZEILENSCHALT-Taste
 (6) SPACE: LEERTASTE
 
-SHIFT (drücken und gedrückt halten) und dann die 7 drücken = SLASH (Schrägstrich: /)]]
+SHIFT (drücken und halten) und dann die Zahl 7 drücken = SLASH (Schrägstrich: /)]]
+
 
 local textadmin1 = [[Wichtige Befehle für Administrator:innen und Lehrkräfte:
 
 Beachten Sie, das einige Erklärungen und Befehle nur für unsere spezielle Serverkonfiguration und die von uns eingesetzten Mods gelten. Außerdem muss man in der Regel das Recht »server« oder »teacher« haben. Viele Einstellungen lassen sich auch bequem über den Mod »edutest« vornehmen. Zu finden ist der Mod im Inventar (I), unten das Doktorhut-Symbol. Manche Änderungen werden erst wirksam, wenn das Spiel neugestartet wird.
 
 CONFIG-DATEI:
-Die config-Datei ist eine Textdatei im Minetest-Ordner. In ihr kann man Einstellungen vornehmen, die dann für ALLE Welten, die man startet, gelten. Typischerweise setzt man hier Rechte der Spieler:innen (default_privs = fly, fast, home, zoom) oder schaltet den Tag-Nachtzyklus ein/aus (time_speed = 0).
+Die config-Datei ist eine Textdatei, in der Voreinstellungen für das Verhalten der Welt definiert werden können. Typischerweise setzt man hier Rechte der Spieler:innen (default_privs = fly, fast, home, zoom) oder schaltet den Tag-Nachtzyklus ein/aus (time_speed = 0).
 
-Beispiel: static_spawnpoint = -9,1,-172. Damit setzt man für ALLE Spieler:innen in ALLEN Welten den Eintrittspunkt in die Welt auf die angegebenen Koordinaten. Mit dem Mod »spawnpoint« gibt es aber eine elegantere Lösung.
+Beispiel: static_spawnpoint = -50,8.5,100. Damit setzt man den Eintrittspunkt in die Welt auf die angegebenen Koordinaten.
+
+Hinweis: Die Wirkung der config-Datei ist u.a. davon abhängig, ob Minetest im Singleplayer-Modus, im lokalen Serverbetrieb oder auf einem »echten« Server läuft.
 
 
 CHATBEFEHLE (alphabetisch):
@@ -290,30 +309,36 @@ Einige Chatbefehle benötigen andere Rechte, bevor sie ausgeführt werden könne
 /teleport <playername1> <playername2> - teleportiert playername1 an die Position von playername2
 /time 00:00 - Tageszeit im Spiel verändern (Beispiel: /time 15:00)
 
-Alle Chat-Befehle unter: https://wiki.minetest.net/Server_commands/de
+Weitere Chat-Befehle findet man unter: https://wiki.minetest.net/Server_commands/de
 
 
 MODS INSTALLIEREN:
-Mods, kleine Zusatzprogramme, erweitern die Möglichkeiten von Minetest. Mods findet man im Internet unter (link). Sie werden in den mods-Ordner von Minetest kopiert und müssen vorm Start der Welt einmalig über den Button KONFIGURIEREN aktiviert werden. Manche Mods sind von anderen Mods abhängig, um korrekt zu funktionieren. Dann müssen diese ebenfalls installiert werden. Nicht immer vertragen sich alle Mods untereinander, so dass man gelegentlich einen Mod wieder entfernen muss.
+Mods, kleine Zusatzprogramme, erweitern die Möglichkeiten von Minetest. Mods findet man im Internet unter https://content.minetest.net/. Sie werden in den mods-Ordner von Minetest kopiert und müssen vorm Start der Welt einmalig über den Button KONFIGURIEREN aktiviert werden. Manche Mods sind von anderen Mods abhängig, um korrekt zu funktionieren. Dann müssen diese ebenfalls installiert werden. Nicht immer vertragen sich alle Mods untereinander, so dass man gelegentlich einen Mod wieder entfernen muss.
 
 Alternativ kann man im worlds-Ordner einer Welt einen worldmods-Ordner anlegen und Mods dort ablegen. Diese Mods muss man nicht über KONFIGURIEREN aktivieren.
+
 
 OBJEKTE LASSEN SICH NICHT ABBAUEN:
 Gelegentlich kommt es vor, dass ein:e Spieler:in trotz Baurechten ein Objekt nicht entfernen kann. Dann ist ein:e Administrator:in gefragt. Ist der Mod »maptools« installiert, holt man sich mit dem Befehl /giveme admin_pick ein Werkzeug ins Inventar, mit dem sich alles abbauen lässt. Ansonsten hilft der Mod »Worldedit«.
 
-GEBIETSSCHUTZ: ECKPUNKTE SETZEN
+
+GEBIETSSCHUTZ - SCHUTZ VORBEREITEN:
+Hat man das »areas«-Privileg kann man ein Gebiet vor unberechtigtem Zugriff anderer Spieler:innen schützen. Dafür markiert man zunächst das Gebiet:
+
 	/area_pos set  – mit Linksklick zwei Eckpunkte setzen
 	Alternativ: Eckpunkte mit /area_pos1 und /area_pos2 setzen
 
-Ist der Mod »WorldEdit« installiert, kann man die Eckpunkte auch mit dem »Worldedit Wand Tool« setzen. Geben Sie im Inventar (I) als Suchbegriff »wand« ein (ohne Anführungszeichen). Beim setzen von Eckpunkten sollte man daran denken, den zweiten Punkt in die Höhe zu setzen, sonst schützt man am Ende nur eine flache Ebene.
+Beim Setzen von Eckpunkten sollte man daran denken, den zweiten Punkt in die Höhe zu setzen, sonst schützt man am Ende nur eine flache Ebene.
 
-GEBIETSSCHUTZ AKTIVIEREN:
-	Möglichkeit 1:  /protect <GebietsName> - Ergebnis: Die Person, die den Befehl schreibt, sichert sich das Gebiet.
-	Möglichkeit 2:  /set_owner <Spieler:inname> <GebietsName> - Ergebnis: Die angegebene Person wird Besitzer:in.
+GEBIETSSCHUTZ - SCHUTZ AKTIVIEREN:
+Dieser Schritt sollte unmittelbar nach dem oben beschriebenen Markieren erfolgen.
 
-Der GebietsName ist optional, wichtig ist die entstehende Gebiets-ID (eine Zahl). Da in der Regel aber nur Administrator:innen das Recht haben, Gebiete zu schützen, müssen im nächsten Schritt Spieler:innen dem Area hinzugefügt werden (außer, man hat gleich mit /set_owner gearbeitet).
+	Variante 1:  /protect <GebietsName> - Ergebnis: Person, die den Befehl schreibt, sichert sich das Gebiet
+	Variante 2:  /set_owner <Spieler:inname> <GebietsName> - Ergebnis: angegebene Person erhält Besitz
 
-GEBIETSSCHUTZ: BESITZER:INNEN HINZUFÜGEN:
+Der GebietsName ist bei Variante 1 zwingend, bei Möglichkeit 2 optional. Wichtig ist letztlich die entstehende Gebiets-ID (eine Zahl). Da in der Regel nur Administrator:innen das Recht haben, Gebiete zu schützen, müssen im nächsten Schritt Spieler:innen dem Area hinzugefügt werden (außer, man konnte gleich mit /set_owner arbeiten).
+
+GEBIETSSCHUTZ - BESITZER:INNEN HINZUFÜGEN:
 Zunächst muss ein bereits geschütztes Gebiet gänzlich (/select_area <ID>) oder in Teilen markiert werden (wie oben: /area_pos set). Danach kommt der Befehl /add_owner zum Einsatz.
 
   /add_owner <ParentID> <Spieler:inname> <UnterGebietsName>
@@ -322,26 +347,20 @@ Zunächst muss ein bereits geschütztes Gebiet gänzlich (/select_area <ID>) ode
 
 Ergebnis: Eine ID als Zahl, zum Beispiel 2 – 2 ist damit Untergebiet von 1 und kann von hinzugefügten Spieler:innen bebaut werden.
 
-GEBIETSSCHUTZ AUFHEBEN:
+GEBIETSSCHUTZ - SCHUTZ AUFHEBEN:
 	/remove_area <ID>
 	Beispiel: /remove_area 2
 
 Ergebnis: LernoaseErsterStock ist nicht mehr im (alleinigen) Besitz von Norbert, Gebiet 1 gibt es aber immer noch.
 
-GEBIETSSCHUTZ: GEBIETE VERWALTEN
+GEBIETSSCHUTZ - GEBIETE VERWALTEN:
   /list_areas - /area_info - /change_owner <ID> <Spieler:inname>
-Alle area-Befehle unter: https://github.com/minetest-mods/areas
 
-
-WORLDEDIT:
-Worldedit kann man über den Chat (T) oder übers Inventar (I) aufrufen (Weltkugel). Mit worldedit kann man umfangreiche Bauarbeiten vereinfachen. Eine genauere Beschreibung würde den Rahmen dieser Hilfe sprengen.
-]]
+Alle areas-Befehle unter: https://github.com/minetest-mods/areas]]
 
 local textadmin2 = [[Wichtige Befehle für Administrator:innen und Lehrkräfte:
 
-Diese Informationen sind nur verfügbar, wenn Du Admininstrator:in bist, das teacher-Privileg besitzt oder als singleplayer spielst.
-
-]]
+Diese Informationen sind nur verfügbar, wenn Du Admininstrator:in bist, das teacher-Privileg besitzt oder als singleplayer spielst.]]
 
 
 -- Namen der Tabs
@@ -351,9 +370,9 @@ local tabs = {
 	"Tastatur",
 	"Chat",
 	"Blöcke",
-	"Tools",
+	"Werkzeuge",
 	"Inventar",
-  "Screen",
+  "Belegung",
   "Admin",
 }
 
@@ -391,11 +410,11 @@ local function build_formspec(player, current_tab)
 	elseif current_tab == "5" then
 				formspec = formspec .."textarea[0.25,0.7;12.0,9.0;;;"..textbloecke.."]"
 	elseif current_tab == "6" then
-				formspec = formspec .."textarea[0.25,0.7;12.0,9.0;;;"..texttools.."]"
+				formspec = formspec .."textarea[0.25,0.7;12.0,9.0;;;"..textwerkzeuge.."]"
 	elseif current_tab == "7" then
 				formspec = formspec .."textarea[0.25,0.7;12.0,2.5;;;"..textinventar1.."]".."image[1.0,2.4;12.0,1.4;hilfe_inv_icon.png]".."textarea[0.25,4.2;12.0,5.0;;;"..textinventar2.."]"
   elseif current_tab == "8" then
-        formspec = formspec .. "textarea[0.25,0.7;12.0,9.0;;;"..textscreen1.."]".."image[1.0,1.2;12.0,6.5;hilfe_tastatur.png]".."textarea[0.25,7.2;12.0,2.5;;;"..textscreen2.."]"
+        formspec = formspec .. "textarea[0.25,0.7;12.0,9.0;;;"..textbelegung1.."]".."image[1.0,1.2;12.0,6.5;hilfe_tastatur.png]".."textarea[0.25,7.2;12.0,2.5;;;"..textbelegung2.."]"
   elseif current_tab == "9" then
     if player_privs["server"] or player_privs["teacher"] or player_name == "singleplayer" then -- nur anzeigen für admin, teacher oder singleplayer
         formspec = formspec .."textarea[0.25,0.7;12.0,9.0;;;"..textadmin1.."]"
@@ -424,7 +443,7 @@ minetest.register_on_player_receive_fields(
 
 -- Aufruf der Hilfe im Chat mit /hilfe
 minetest.register_chatcommand("hilfe", {
-  description = "Zeigt die wichtigsten Tastatur-Befehle, Werkzeuge und Blöcke in Minetest an",
+  description = S("This mod helps beginners to understand the most important keyboard commands, tools and blocks in Minetest (currently only in German language)."),
 	func = function(name)
 			local player = minetest.get_player_by_name(name)
 			if player then
@@ -439,7 +458,7 @@ if minetest.global_exists("unified_inventory") then
 	unified_inventory.register_button("hilfe", {
 		type   = "image",
 		image  = "hilfe_inventory.png",
-    tooltip = "Hilfe aufrufen",
+    tooltip = S("Show Help"),
 		action = build_formspec
 	})
 elseif minetest.global_exists("inventory_plus") then
