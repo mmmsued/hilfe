@@ -11,4 +11,4 @@ You can change easily the help text in the init.lua file.
 <img src="Screenshot.png">
 
 Lizenz:
-Copyright (C) 2021 Norbert Thien, multimediamobil - Region Süd, Lizenz: Creative Commons BY-SA 4.0
+Copyright (C) 2022 Norbert Thien, multimediamobil - Region Süd, Lizenz: Creative Commons BY-SA 4.0
