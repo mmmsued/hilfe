@@ -257,7 +257,7 @@ local textbelegung2 = [[(1) ESC: ESCAPE-Taste - (2) TAB: TABULATOR-Taste - (3) S
 SHIFT (drücken + halten) und dann die Zahl 7 drücken = SLASH (Schrägstrich: /)]]
 
 
-local textadmin1 = [[WICHTIHE BEFEHLE FÜR ADMINISTRATOR:INNEN und LEHRKRÄFTE:
+local textadmin1 = [[WICHTIGE BEFEHLE FÜR ADMINISTRATOR:INNEN und LEHRKRÄFTE:
 
 Beachten Sie, das einige Erklärungen und Befehle nur für unsere spezielle Serverkonfiguration und die von uns eingesetzten Mods gelten. Außerdem muss man in der Regel das Recht »server« oder »teacher« haben. Viele Einstellungen lassen sich auch bequem über den Mod »edutest« vornehmen. Zu finden ist der Mod im Inventar (I) unten unter dem Doktorhut-Symbol. Manche Änderungen werden erst wirksam, wenn das Spiel neugestartet wird.
 
