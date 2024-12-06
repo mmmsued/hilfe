@@ -8,7 +8,7 @@ This mod helps beginners to understand Minetest/Luanti (currently only in German
 You can change easily the help text in the init.lua file.
 ## [download](https://github.com/mmmsued/hilfe)
 
-<img src="Screenshot.png">
+<img src="screenshot.png">
 
 Lizenz:
 Copyright (C) 2022 Norbert Thien, multimediamobil - Region Süd, Lizenz: Creative Commons BY-SA 4.0
