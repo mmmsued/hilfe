@@ -284,7 +284,6 @@ Einige Chatbefehle benötigen Zugriff auf weitere Rechte, bevor sie korrekt ausg
 /help all – die eingebaute Hilfe öffnen
 /help privs – Liste aller verfügbaren Privilegien auf einem Server
 /kick <player> <reason> – Person vom Server werfen, <reason> optional
-/list_student – zeigt alle Personen mit Privileg »student« an
 /mods – welche Mods werden im Spiel verwendet
 /notify <player> <Nachricht> – Nachricht an <player> in einem Extra-Fenster
 /notify_all <Nachricht> – Nachricht an alle in einem Extra-Fenster
@@ -294,6 +293,7 @@ Einige Chatbefehle benötigen Zugriff auf weitere Rechte, bevor sie korrekt ausg
 /revokeme <privilege> – entzieht mir angegebenes Recht
 /rollback <player> <sec> – Rücknahme der <player>-Aktionen der letzten <sec>
 /rollback_check <area> <sec> – welcher <player> hat den <area> verändert (Linksklick für <area>)
+		Hinweis: rollback muss man in der mod.conf mit »enable_rollback_recording = true« aktivieren
 /set time_speed 0 – setzt den Tag-Nachtzyklus außer Kraft (Standard 72)
 /setpassword <player> <password> – Passwort setzen (mit /clearpassword löschen)
 /status – zeigt Serverinformationen, u.a. alle angemeldeten Personen
