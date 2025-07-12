@@ -298,6 +298,7 @@ Einige Chatbefehle benötigen Zugriff auf weitere Rechte, bevor sie korrekt ausg
 /setpassword <player> <password> – Passwort setzen (mit /clearpassword löschen)
 /status – zeigt Serverinformationen, u.a. alle angemeldeten Personen
 /teacher <player> – gibt angegebener Person Rechte für den Mod »edutest«
+/teleport <player1> <x, y, z> – teleportiert player an angegebene Position
 /teleport <player1> <player2> – teleportiert player1 an die Position von player2
 /time 00:00 – Tageszeit im Spiel verändern (Beispiel: /time 15:00)
 
@@ -319,8 +320,8 @@ Ansonsten ist ein:e Administrator:in gefragt. Ist der Mod »maptools« installie
 GEBIETSSCHUTZ – SCHUTZ VORBEREITEN (sofern Mod »area« installiert ist):
 Hat man das »areas«-Privileg kann man ein Gebiet vor einem unberechtigten Zugriff anderer Spieler:innen schützen. Dafür markiert man zunächst das Gebiet mit einem Chat-Befehl:
 
-	/area_pos set  – mit Linksklick zwei Eckpunkte setzen
-	Alternativ: Eckpunkte mit /area_pos1 und /area_pos2 setzen
+  Variante 1:  /area_pos set  – danach mit Linksklick zwei Eckpunkte setzen
+  Variante 2:  Eckpunkte setzen mit /area_pos1 <x, y, z> und /area_pos2 <x, y, z>
 
 Beim Setzen von Eckpunkten sollte man daran denken, den zweiten Punkt in die Höhe zu setzen, sonst schützt man am Ende nur eine flache Ebene.
 
@@ -341,9 +342,11 @@ Zunächst muss ein bereits geschütztes Gebiet gänzlich (/select_area <ID>) ode
 
 Ergebnis: Eine ID als Zahl, zum Beispiel 2 – 2 ist damit geschütztes Untergebiet von 1 und kann von hinzugefügten Spieler:innen bebaut werden.
 
-GEBIETSSCHUTZ – SCHUTZ AUFHEBEN:
-	/remove_area <ID>
-	Beispiel: /remove_area 2
+GEBIETSSCHUTZ – SCHUTZ (TEMPORÄR) AUFHEBEN:
+	/area_open <ID> – geschütztes Gebiet wird temporär geöffnet (Toggle-Schalter)
+
+	/remove_area <ID> – geschütztes Gebiet wird vollständig gelöscht
+	   Beispiel: /remove_area 2
 
 Ergebnis: LernoaseErsterStock ist nicht mehr im (alleinigen) Besitz von Spieler Norbert, Gebiet 1 gibt es aber immer noch.
 
